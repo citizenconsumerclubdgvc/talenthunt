@@ -14,7 +14,7 @@ export default function Events() {
   const [activeTab, setActiveTab] = useState<'day1' | 'day2' | 'online'>('day1');
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
-  const rulebookUrl = 'https://drive.google.com/file/d/1IcDURaRdILlNZiI6DlATGXRUCrwZKvza/view?usp=drive_link';
+  const rulebookUrl = 'https://drive.google.com/file/d/1hY0RfE-WnQQRd9O5SK0_CyXYSOe5mCGN/view?usp=drivesdk';
 
   const day1Events: Event[] = [
     { name: 'Minutes to Fame', codename: 'KŌKAKU', era: '2021', zodiac: '♍', tagline: 'Precision under pressure', registerUrl: 'https://forms.gle/kG4JX9DUwWHVx5g26' },

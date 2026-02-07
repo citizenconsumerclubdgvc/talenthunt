@@ -35,7 +35,10 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#1e0014] text-white overflow-x-hidden">
+    <div
+      className="min-h-screen text-white overflow-x-hidden bg-[url('src/assets/bg.png')]
+      bg-cover bg-no-repeat"
+      >
       <Navbar />
       <Hero />
       <About />

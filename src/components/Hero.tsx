@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Calendar, Sparkles } from 'lucide-react';
+import gsap from 'gsap';
 
 export default function Hero() {
   const [timeLeft, setTimeLeft] = useState({
@@ -8,6 +9,19 @@ export default function Hero() {
     minutes: 0,
     seconds: 0,
   });
+
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const text = "TALENT HUNT'26";
+
+  useEffect(() => {
+    gsap.to(textRef.current, {
+      y: -12,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  }, []);
 
   useEffect(() => {
     const targetDate = new Date('2026-02-23T00:00:00').getTime();
@@ -40,7 +54,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1e0014] via-[#380A2D] to-[#1e0014]"></div>
+      <div className="absolute inset-0"></div>
 
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 text-[#B0903B]/30 text-6xl">♈</div>
@@ -56,8 +70,8 @@ export default function Hero() {
           <Sparkles className="w-12 h-12 text-[#B0903B] mx-auto mb-4 animate-pulse" />
         </div>
 
-        <h1 className="text-7xl md:text-9xl font-bold text-[#B0903B] mb-6 tracking-wider drop-shadow-[0_0_30px_rgba(176,144,59,0.5)]">
-          TALENT HUNT'26
+        <h1 className="text-5xl md:text-7xl font-bold font-serif text-[#B0903B] mb-6 tracking-wider drop-shadow-[0_0_30px_rgba(176,144,59,0.5)]" ref={textRef}>
+          {text}
         </h1>
 
         <p className="text-2xl md:text-3xl text-[#DEA193] mb-4 font-light tracking-widest">

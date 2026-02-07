@@ -1,7 +1,7 @@
 import { Calendar, FileText, CheckCircle } from 'lucide-react';
 
 export default function Rules() {
-  const rulebookUrl = 'https://drive.google.com/file/d/1IcDURaRdILlNZiI6DlATGXRUCrwZKvza/view?usp=drive_link';
+  const rulebookUrl = 'https://drive.google.com/file/d/1hY0RfE-WnQQRd9O5SK0_CyXYSOe5mCGN/view?usp=drivesdk';
 
   return (
     <section id="rules" className="min-h-screen py-20 px-4 relative overflow-hidden">
