@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { createPortal } from "react-dom";
+
 import { X, ExternalLink, FileText } from 'lucide-react';
 
 interface Event {
@@ -138,8 +140,8 @@ export default function Events() {
       </div>
 
       {selectedEvent && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
+        createPortal(<div
+          className="fixed w-[100vw] h-[100vh] inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
           onClick={() => setSelectedEvent(null)}
         >
           <div
@@ -185,7 +187,7 @@ export default function Events() {
               </a>
             </div>
           </div>
-        </div>
+        </div>, document.body)
       )}
     </section>
   );

@@ -53,7 +53,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
+    <section id="home" className="pt-20 min-h-screen relative flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0"></div>
 
       <div className="absolute inset-0 opacity-20">
