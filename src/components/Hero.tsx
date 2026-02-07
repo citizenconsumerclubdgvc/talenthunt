@@ -134,8 +134,7 @@ export default function Hero() {
                 className="w-full md:w-64 h-48 bg-[#380A2D]/50 border-2 border-[#B0903B]/50 rounded-lg flex items-center justify-center hover:border-[#DEA193] hover:scale-105 transition-all duration-300 cursor-pointer group"
               >
                 <div className="text-center">
-                  <Calendar className="w-12 h-12 text-[#B0903B] mx-auto mb-2 group-hover:text-[#DEA193] transition-colors" />
-                  <p className="text-[#B0903B] group-hover:text-[#DEA193] transition-colors">Memory Fragment {i}</p>
+                  <img src={`assets/highlights/${i}.jpeg`} alt="highlights" />
                 </div>
               </div>
             ))}

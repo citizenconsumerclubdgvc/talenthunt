@@ -36,8 +36,10 @@ function App() {
 
   return (
     <div
-      className="min-h-screen text-white overflow-x-hidden bg-[url('assets/bg.png')]
-      bg-cover bg-no-repeat"
+      className="min-h-screen text-white overflow-x-hidden bg-cover bg-no-repeat h-screen bg-opacity-10"
+      style={{
+        backgroundImage: "linear-gradient(rgba(45, 5, 33, 0.7), rgba(45, 5, 33, 0.7)), url(assets/bg.png)"
+      }}
       >
       <Navbar />
       <Hero />

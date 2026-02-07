@@ -93,8 +93,6 @@ export default function About() {
               onClick={() => toggleCard(card.id)}
             >
               <div className="p-6 relative">
-                <div className="absolute top-4 right-4 text-4xl text-[#B0903B]/30">{card.zodiac}</div>
-
                 <div className="flex items-center gap-4 mb-4">
                   <div className="text-[#B0903B]">{card.icon}</div>
                   <h3 className="text-xl font-bold text-[#DEA193]">{card.title}</h3>

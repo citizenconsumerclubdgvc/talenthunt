@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
+
 import { X, Crown, Users as UsersIcon } from "lucide-react";
 
 interface TeamMember {
@@ -16,51 +18,51 @@ export default function Team() {
     {
       role: "President",
       name: "Meenakshi Perumal",
-      zodiac: "♌",
+      zodiac: "♏",
       picture: "assets/core-team/1.png",
-      bio: "Meenakshi Perumal is the current President of the Citizen Consumer Club, DG Vaishnav College. She stepped into this role at a time when leadership was not easy and expectations were high. Over the year, she has handled the club's work closely, from planning programs to making sure execution happens on ground. Under her presidency, CCC has completed 14 successful initiatives, driven by the belief that responsibility cannot be waited for or spoon-fed it has to be taken. She leads with seriousness, effort, and the mindset that CCC's name must always be carried with value.",
+      bio: "Originating From The Department: B.Com General Shift II she stepped into this role at a time when leadership was demanding and expectations were high. Under her presidency, CCC has completed 14 successful programs, driven by the belief that responsibility cannot be waited for or spoon-fed; it has to be taken. She leads with seriousness, consistent effort, and the mindset that the name of CCC must always be carried with responsibility and Pride.",
     },
     {
       role: "Vice President",
       name: "Sanjeev",
       zodiac: "♏",
       picture: "assets/core-team/2.png",
-      bio: "Sanjeev looks like the most chill person you could meet, and that is exactly the trap. Behind the smiles is the strictest voice of CCC, the one who keeps everyone in line when things get too comfortable. Fun is allowed, but only after the work is done.",
+      bio: "Sanjeev is of B.com Bank Management department, CCC is the first stage where he came out, and it is the same CCC stage where he is now signed in. Talent Hunt is his first step, and it is through this platform that he is going to showcase his full potential and leave a lasting mark. Creating experiences,Not just events",
     },
     {
       role: "Secretary",
       name: "D N Naveen",
       zodiac: "♈",
       picture: "assets/core-team/3.png",
-      bio: "Naveen is the pulse of the club. Loud in motivation, fast in action, and always the first to push the team forward. If CCC ever feels like it is running on extra energy, it is probably because Naveen decided standing still was illegal.",
+      bio: "Naveen is the pulse of the club and of the department of B.com Bank Management. Loud in motivation, fast in action, and always the first to push the team forward. If CCC ever feels like it is running on extra energy, it is probably because Naveen decided standing still was illegal.",
     },
     {
       role: "Organizing Secretary",
       name: "B Kotteeswari",
       zodiac: "♍",
       picture: "assets/core-team/4.png",
-      bio: "Kotteeswari may not start the fire, but once the work is handed to her, it gets done flawlessly. She is the definition of delegated perfection, quiet in initiative, sharp in execution, and a major reason why CCC stays structured.",
+      bio: "Hailing from Department of B.com General Shift I Kotteeswari may not start the fire, but once the work is handed to her, it gets done flawlessly. She is the definition of delegated perfection, quiet in initiative, sharp in execution, and a major reason why CCC stays structured.",
     },
     {
       role: "Joint Secretary",
       name: "Lidia Jenniffer",
       zodiac: "♊",
       picture: "assets/core-team/5.png",
-      bio: "Lidia is CCC's official public appearance. Work in the field is optional, but posting about the field is not. She keeps the club visible, aesthetic, and remembered, because every empire needs someone to handle the spotlight while others handle the chaos.",
+      bio: "Star of B.A Sociology, Lidia is CCC's official public appearance. Work in the field is optional, but posting about the field is not. She keeps the club visible, aesthetic, and remembered, because every empire needs someone to handle the spotlight while others handle the chaos.",
     },
     {
       role: "Treasurer",
       name: "Thanu Shree R P",
       zodiac: "♎",
       picture: "assets/core-team/6.png",
-      bio: "Thanu Shree holds the Treasurer title with grace and good vibes. She may not be the one calculating the universe of finances, but she is always present as the club's tiny constant. Moral support counts as accounting, right?",
+      bio: "Thanu Shree holds the Treasurer title with grace and good vibes And the Department Of Commerce Shift I in her hands. She may not be the one calculating the universe of finances, but she is always present as the club's tiny constant. Moral support counts as accounting, right?",
     },
     {
       role: "Deputy Treasurer",
       name: "E Kiran Kumar",
       zodiac: "♑",
       picture: "assets/core-team/7.png",
-      bio: "Kiran Kumar is the MVP of CCC, no debate. He does everything, finance, fieldwork, execution, support, last minute saves, all of it. The club's pookie and powerhouse combined, the one person CCC can count on in every possible way.",
+      bio: "The fav Of Department of B.com Bank Management, Kiran Kumar is the MVP of CCC, no debate. He does everything, finance, fieldwork, execution, support, last minute saves, all of it. The club's pookie and powerhouse combined, the one person CCC can count on in every possible way.",
     },
   ];
 
@@ -227,9 +229,6 @@ export default function Team() {
                 onClick={() => setSelectedMember(member)}
                 className="relative bg-gradient-to-b from-[#380A2D] to-[#1e0014] border-4 border-[#B0903B] rounded-lg p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-[#B0903B]/50 group"
               >
-                <div className="absolute top-2 right-2 text-4xl text-[#B0903B]/30 group-hover:text-[#B0903B]/60 transition-all">
-                  {member.zodiac}
-                </div>
 
                 <div className="h-32 flex items-center justify-center mb-4">
                   <div className="w-24 h-24 rounded-full flex items-center justify-center group-hover:border-[#DEA193] transition-colors">
@@ -345,8 +344,8 @@ export default function Team() {
       </div>
 
       {selectedMember && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
+        createPortal(<div
+          className="fixed h-[100vh] w-[100vw] inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
           onClick={() => setSelectedMember(null)}
         >
           <div
@@ -378,7 +377,7 @@ export default function Team() {
               </p>
             </div>
           </div>
-        </div>
+        </div>, document.body)
       )}
     </section>
   );

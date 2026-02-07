@@ -20,7 +20,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <a
-            href="https://chat.whatsapp.com/FbwrSn2tlza3SROzMkJuEY"
+            href="https://chat.whatsapp.com/EBcUjQhoUNY3bbUPtNqrBl"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#380A2D]/50 backdrop-blur-sm border-2 border-[#B0903B]/50 rounded-lg p-6 text-center hover:border-[#B0903B] hover:scale-105 transition-all duration-300 group"
