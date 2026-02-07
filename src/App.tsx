@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div
-      className="min-h-screen text-white overflow-x-hidden bg-[url('src/assets/bg.png')]
+      className="min-h-screen text-white overflow-x-hidden bg-[url('assets/bg.png')]
       bg-cover bg-no-repeat"
       >
       <Navbar />
